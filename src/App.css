@@ -1,38 +1,110 @@
-.App {
-  text-align: center;
+.app {
+  padding: 2rem 4rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.spinnerContainer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.spinnerIcon {
+  font-size: 3rem;
+  color: cornflowerblue;
+  animation: 1.5s linear infinite spinner;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes spinner {
+  0% {
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: translate3d(-50%, -50%, 0) rotate(360deg);
+  }
+}
+
+.firstRowGraphContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.smallGraphContainer {
+  background-color: white;
+  padding: 2rem;
+  width: 40rem;
+  height: 23rem;
+  border-radius: 1rem;
+}
+
+.doughnutChartContainer {
+  background-color: white;
+  padding: 2rem;
+  width: 20rem;
+  height: 23rem;
+  border-radius: 1rem;
+}
+
+.responseTimeChartContainer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-around;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* //responseTimeChart */
+.responseTimeChartContainer div {
+  width: 35rem;
+  height: 20rem;
+}
+
+.usageStatisticsChartContainer {
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-around;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+
+.usageStatisticsChartContainer div {
+  width: 25rem;
+  height: 30rem;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .app {
+    padding: 5px;
+  }
+
+  .smallGraphContainer {
+    width: 15rem;
+    height: 10rem;
+  }
+
+  .doughnutChartContainer {
+    width: 15rem;
+    height: 20rem;
+  }
+
+  .responseTimeChartContainer div {
+    width: 20rem;
+    height: 15rem;
+  }
+
+  .usageStatisticsChartContainer div {
+    width: 20rem;
+    height: 25rem;
   }
 }
